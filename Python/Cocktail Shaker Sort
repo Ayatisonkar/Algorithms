@@ -1,0 +1,32 @@
+#cocktail shaker sort Algorithm
+def cocktailSort(A):
+    n=len(A)
+    notsorted=True
+    start=0
+    end=n-1
+    
+    while(notsorted==True):
+        notsorted=False
+        for i in range(start,end):
+            if(A[i]>A[i+1]):
+                A[i],A[i+1]=A[i+1],A[i]
+                notsorted = True
+        if(notsorted==False):break
+        nonsorted=False
+        end=end-1
+        for i in range(end-1,start-1,-1):
+            if(A[i]>A[i+1]):
+                A[i],A[i+1]=A[i+1],A[i]
+                nonsorted=True
+        start=start+1
+A=[]
+n = int(input("Enter number of elements : "))
+  
+for i in range(0, n):
+    ele = int(input())
+  
+    A.append(ele)
+cocktailSort(A)
+for i in range(len(A)):
+    print(A[i],end=" ")
+    
